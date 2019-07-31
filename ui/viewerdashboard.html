@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Welcome Admin!</title>
+    <title>Welcome User!</title>
     <link rel="stylesheet" href="../../../static/Dashboard/assets/bootstrap/css/bootstrap.min.css?h=619e4616a89592bb0c141238cc2f1a6b">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="../../../static/Dashboard/assets/fonts/fontawesome-all.min.css?h=0692f36eb27607e4837760bbbf813d92">
@@ -12,18 +12,17 @@
     <link rel="stylesheet" href="../../../static/Dashboard/assets/css/styles.css?h=b01a40e42e5c818073927fb27d007f99">
 </head>
 
-<body id="page-top">
+<body>
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background-image: url('none');background-color: rgb(93,24,118);">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background-color: rgb(93,24,118);">
             <div class="container-fluid d-flex flex-column p-0">
-                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/account/admindash/index/">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="viewerdashboard.html">
                     <div class="sidebar-brand-icon rotate-n-15"></div><img class="KYSlogo" src="../../../static/Dashboard/assets/img/KYSLogo.png?h=a66ec06786222b4dc5dd0052c3870aa4">
                     <div class="sidebar-brand-text mx-3"><span class="logo-text">Knowyourschedule</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/account/admindash/index/"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a><a class="nav-link" href="/account/admindash/addviewer/"><i class="icon ion-person-add"></i><span>Add Viewer</span></a><a class="nav-link"
-                                                                                                                                                                                                                                                                                        href="/account/admindash/editschedule/"><i class="far fa-calendar-minus"></i><span>Add Schedule</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="viewerdashboard.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a><a class="nav-link" href="#"><i class="far fa-calendar-minus"></i><span>Leave &nbsp;Request</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -93,7 +92,7 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow" role="presentation">
-                                <li class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Admin</span><img class="border rounded-circle img-profile" src="../../../static/Dashboard/assets/img/avatars/zoroicon.png?h=874cca6b24c5a38c183f6225a1e5c616"></a>
+                                <li class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="viewerdashboard.html"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Viewer</span><img class="border rounded-circle img-profile" src="../static/Dashboard/assets/img/avatars/luffyicon.png?h=c8fd0ebf0bf62795bc8c4aaed0b578f7"></a>
                                     <div
                                         class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
                                         <a
@@ -106,7 +105,7 @@
             </nav>
             <div class="container-fluid">
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                    <h3 class="text-dark mb-0" style="color: rgb(10,10,10);font-size: 40px;"><strong>Admin Dashboard</strong></h3>
+                    <h3 class="text-dark mb-0" style="color: rgb(10,10,10);font-size: 40px;"><strong>Welcome @User</strong></h3>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -117,23 +116,7 @@
                                     <table class="table table-hover">
                                         <thead style="color: rgb(0,0,0);">
                                             <tr>
-                                                <th><a href="#">Sunday</a></th>
-                                                <th><a href="#">Monday</a></th>
-                                                <th><a href="#">Tuesday</a></th>
-                                                <th><a href="#">Wednesday</a></th>
-                                                <th><a href="#">Thursday</a></th>
-                                                <th><a href="#">Friday</a></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody style="color: rgb(25,25,25);"></tbody>
-                                    </table>
-                                </div>
-                                <h2 class="text-center" style="color: rgb(0,0,0);">For @Day</h2>
-                                <div class="table-responsive" style="color: rgb(0,0,0);">
-                                    <table class="table">
-                                        <thead>
-                                            <tr style="color: rgb(0,0,0);">
-                                                <th style="color: rgb(0,0,0);">Class No./Time</th>
+                                                <th>Class No.\Time</th>
                                                 <th>11:00-12:00</th>
                                                 <th>12:00-1:00</th>
                                                 <th>1:00-2:00</th>
@@ -141,14 +124,14 @@
                                                 <th>3:30-4:30</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr style="color: rgb(0,0,0);">
-                                                <td>BIM 101</td>
-                                                <td>Cell 2</td>
-                                                <td>Cell 2</td>
-                                                <td>Cell 2</td>
-                                                <td>Cell 2</td>
-                                                <td>Cell 1</td>
+                                        <tbody style="color: rgb(25,25,25);">
+                                            <tr>
+                                                <td>BIM A 101</td>
+                                                <td>Text</td>
+                                                <td>Text</td>
+                                                <td>Text</td>
+                                                <td>Text</td>
+                                                <td>Text</td>
                                             </tr>
                                         </tbody>
                                     </table>

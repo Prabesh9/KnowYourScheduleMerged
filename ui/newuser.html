@@ -33,15 +33,20 @@
     </nav>
     <div class="login-clean" style="background-color: rgb(93,24,118);opacity: 1;background-image: url('../static/Login/assets/img/back.jpg');">
         <form class="login-form" enctype="multipart/form-data" method="post" style="filter: brightness(99%);" action="/register/">
-{#             <input type="hidden" name="csrfmiddlewaretoken" value="LcK9861BqIikOfhIo6lLxA9n3mAbfvm8PlJLi5n9TkOhkRALZcBpwvcWZogRodSC">#}
 
-                        {% csrf_token %}
+            {% csrf_token %}
+            {% if error_msg %}
+                <div class="alert alert-danger">{{ error_msg }}</div>
+            {% endif %}
+            {% if success_msg %}
+                <div class="alert alert-success">{{ success_msg }}</div>
+            {% endif %}
             <h2 class="sr-only" style="color: rgb(9,132,255);">Login Form</h2>
             <div class="illustration"><img class="logo-login" src="../static/Login/assets/img/KYSLogo.png?h=2a3acbdc4445389f66707e3bf78f85f9">
                 <h1 class="login-text" style="color: rgb(93,24,118);"><strong>Register</strong></h1>
             </div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="confirmcode" placeholder="Confirmation Code"></div>
+            <div class="form-group"><input class="form-control" type="password" name="confirmation" placeholder="Confirmation Code"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="New Password"></div>
             <div class="form-group"><input class="form-control" type="password" name="cpassword" placeholder="Confirm Password"></div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(93,24,118);">Register</button></div>

@@ -13,14 +13,28 @@
 </head>
 
 <body>
+
     <div id="wrapper">
-        {% include "navbar.html" %}
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background-color: rgb(93,24,118);background-image: url('none');">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/account/admindash/index/">
+                    <div class="sidebar-brand-icon rotate-n-15"></div><img class="KYSlogo" src="../../../static/Dashboard/assets/img/KYSLogo.png?h=a66ec06786222b4dc5dd0052c3870aa4">
+                    <div class="sidebar-brand-text mx-3"><span class="logo-text">Knowyourschedule</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/account/admindash/index/"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a><a class="nav-link active" href="/account/admindash/addviewer/"><i class="icon ion-person-add"></i><span>Add Viewer</span></a><a class="nav-link"
+                            href="/account/admindash/editschedule/"><i class="far fa-calendar-minus"></i><span>Add Schedule</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
             {% include "include/topNavBar.html" %}
             <div class="container-fluid">
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                    <h3 class="text-dark mb-0" style="color: rgb(0,0,0);">Add Viewer</h3>
+                    <h3 class="text-dark mb-0" style="color: rgb(0,0,0);font-weight: bold; font-size: 40px">Add Viewer</h3>
                 </div>
                 <div class="row">
                     <div class="col">
