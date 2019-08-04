@@ -1,17 +1,17 @@
 from django.db import connection
 import traceback
-
+from datetime import datetime
 from model.forum import Forum
 from model.message import Message
 from model.user import User
-from utils import to_date
+from utils import to_date, timestamp
 
 
 class MessageRepo(object):
 
 
     def fetch_messages(self, email):
-        query = "SELECT content, sender, created_at FROM messages WHERE user_email = %s ORDER BY created_at"
+        query = "SELECT content, sender, created_at FROM messages WHERE user_email = %s order by created_at"
         try:
             with connection.cursor() as cursor:
                 cursor.execute(query, [email])
@@ -37,6 +37,7 @@ class MessageRepo(object):
         try:
             with connection.cursor() as cursor:
                 cursor.execute(query, [message.email, message.content, message.sender, message.created_at])
+                print(message.created_at)
                 return True
         except Exception as e:
             traceback.print_exc()

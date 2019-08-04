@@ -1,0 +1,117 @@
+.logo-text {
+  font-size: 12px;
+}
+
+.material-icons {
+  margin-right: -10px;
+}
+
+.KYSlogo {
+  max-width: 50px;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.subit-button {
+  text-align: center;
+}
+
+.msg-a {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.msg-b {
+  border: 2px solid #ccc;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.msg-a::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.msg-b::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.image-left {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.image-right {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.left-div {
+  float: left;
+  display: inline;
+  width: 20%;
+  overflow-y: auto;
+}
+
+.right-div {
+  float: left;
+  display: inline;
+  width: 80%;
+  overflow-y: auto;
+}
+
+.right-divv {
+  float: left;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.bottom-div {
+  width: 100%;
+}
+
+.msg-textarea {
+  width: 90%;
+  display: inline;
+  float: left;
+  height: 100%;
+  padding-bottom: 2%;
+}
+
+.btn.btn-primary.send-button {
+  width: 10%;
+  height: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.top-div {
+  height: 80%;
+}
+
+.bottom-div {
+  height: 20%;
+}
+

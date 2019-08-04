@@ -1,0 +1,100 @@
+<link href='../static/calendar/core/main.css' rel='stylesheet' />
+<link href='../static/calendar/daygrid/main.css' rel='stylesheet' />
+<link href='../static/calendar/timegrid/main.css' rel='stylesheet' />
+<link href='../static/calendar/list/main.css' rel='stylesheet' />
+<script src='../static/calendar/core/main.js'></script>
+<script src='../static/calendar/interaction/main.js'></script>
+<script src='../static/calendar/daygrid/main.js'></script>
+<script src='../static/calendar/timegrid/main.js'></script>
+<script src='../static/calendar/list/main.js'></script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'timeGrid', 'list' ],
+      header: {
+        left: '',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      },
+      defaultDate: '2019-08-03',
+      navLinks: true, // can click day/week names to navigate views
+
+      weekNumbers: true,
+      weekNumbersWithinDays: true,
+      weekNumberCalculation: 'ISO',
+
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2019-06-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2019-06-07',
+          end: '2019-06-10'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2019-06-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2019-06-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2019-06-11',
+          end: '2019-06-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-06-12T10:30:00',
+          end: '2019-06-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2019-06-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-06-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2019-06-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2019-06-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2019-08-03 07:30'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2019-06-28'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
+<style>
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+</style>
+<div id="calendar">
+</div>
