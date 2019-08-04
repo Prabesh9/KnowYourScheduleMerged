@@ -95,6 +95,13 @@ def adminAdd(request):
     context = {}
     return HttpResponse(adminAddView.render(context, request))
 
+def chat(request):
+    if "login_user" not in request.session:
+        return redirect("/")
+    chat = loader.get_template("../ui/adminchat.html")
+    context = {}
+    return HttpResponse(chat.render(context, request))
+
 def adminAddSubmit(request):
     if "login_user" not in request.session:
         return redirect("/")

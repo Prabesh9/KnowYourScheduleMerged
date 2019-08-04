@@ -12,6 +12,7 @@ class ScheduleRepo(object):
         query = "INSERT INTO schedule(subject_id, day_no, start_time, end_time, class_no, added_at) VALUES(%s,%s,%s,%s,%s,%s)"
         try:
             with connection.cursor() as cursor:
+                print(query)
                 cursor.execute(query, [schedule.subject_id, schedule.day_no, schedule.start_time, schedule.end_time,schedule.class_no, created_at])
                 return True
         except Exception as e:

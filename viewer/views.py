@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 from django.template import loader
 from django.http import HttpResponse
@@ -19,7 +19,7 @@ def index(request):
         context["login_user"] = request.session["login_user"]
         context["username"] = request.session["login_user"].split("@")[0]
         scheduleRepo = ScheduleRepo()
-        context["row"] = scheduleRepo.fetchSchedule(scheduleRepo.getId(context["login_user"]),(datetime.datetime.today().weekday()+2)%7)
+        context["row"] = scheduleRepo.fetchSchedule(scheduleRepo.getId(context["login_user"]),(datetime.today().weekday()+2)%7)
     else:
         return redirect("/")
     return HttpResponse(index_html_page.render(context, request))
@@ -50,6 +50,8 @@ def chat_submit(request):
         message.email = context["login_user"]
         message.content = request.POST["content"]
         message.sender = True
+        created_at = datetime.now()
+        message.created_at = created_at.strftime('%Y-%m-%d %H:%M:%S')
         message.created_at = timestamp()
         messageRepo = MessageRepo()
         messageRepo.save(message)
