@@ -52,7 +52,7 @@ def chat_submit(request):
         message.sender = True
         created_at = datetime.now()
         message.created_at = created_at.strftime('%Y-%m-%d %H:%M:%S')
-        message.created_at = timestamp()
+        # message.created_at = timestamp()
         messageRepo = MessageRepo()
         messageRepo.save(message)
         return redirect("/account/viewerdash/chat/")

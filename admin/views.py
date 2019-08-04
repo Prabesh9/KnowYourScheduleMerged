@@ -9,6 +9,10 @@ from django.http import HttpResponse
 from django.template import loader
 
 # Create your views here.
+
+from django.conf import settings
+from django.core.mail import send_mail
+
 from model.schedule import Schedule
 from model.teacher import Teacher
 from repo.schedule_repo import ScheduleRepo
@@ -128,8 +132,15 @@ def adminAddSubmit(request):
         else:
             try:
                 use_repo = UserRepo()
+
+                subject = "Your account has been added"
+                message = "Your Confirmation code is "+confirmation
+                from_email = settings.EMAIL_HOST_USER
+                to_list = [email]
+                send_mail(subject, message, from_email, to_list, fail_silently=False)
+
                 if use_repo.save(user, confirmation, time):
-                    context["success_msg"] = "Teacher Added, Confirmation Code is "+confirmation
+                    context["success_msg"] = "Confirmation code has been sent to "+email
             except Exception:
                 traceback.print_exc()
                 context["error_msg"] = "Something went wrong"

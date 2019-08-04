@@ -25,7 +25,7 @@ class MessageRepo(object):
                         message.email= email
                         message.content = row[0]
                         message.sender = row[1]
-                        message.created_at = datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
+                        message.created_at = row[2]
                         messages.append(message)
                     return messages
         except Exception as e:
